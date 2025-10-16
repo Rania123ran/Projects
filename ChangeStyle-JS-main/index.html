@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+             <h2>Change the CSS of below image! with the help of the sliders </h2>
+        <h3>JavaScript</h3>
+        </div>
+        <div class="inputs">
+            <p>Base Color</p>
+            <input type="color" name="ColorChange" id="" value="#fe0000">
+            <p>Width</p>
+            <input type="range" name="widthChange" id="" min="200" max="400" value="200"  data-size="px">
+             <p>Border Radius</p>
+            <input type="range" name="borderChange" id="" min="10" max="30" value="10"data-size="px">
+             <p>Padding</p>
+            <input type="range" name="paddingChange" id="" min="10" max="40" value="15" data-size="px">
+             <p>Blur</p>
+            <input type="range" name="blurChange" id="" min="0" max="20" value="10" data-size="px">
+        </div>
+        <div class="img">
+            <img src="images/images.png" alt="image" class="image">
+        </div>
+    </div>
+    <script>
+        let img = document.querySelector(".image")
+        let inputs = document.querySelectorAll(".inputs input")
+        inputs.forEach((input)=>{
+            input.addEventListener("input",update)
+        })
+        function update(){
+            let unit = this.dataset.size || ""
+            let value = this.value + unit
+            switch(this.name){
+                case "ColorChange" : 
+                img.style.backgroundColor  = value ; break
+                case "widthChange" : 
+                img.style.width = value ; break 
+                case "borderChange" : 
+                img.style.borderRadius = value ; break 
+                case "paddingChange" : 
+                img.style.padding = value ; break 
+                case "blurChange": 
+                img.style.filter = `blur(${value})`;
+                break;
+                
+            
+        }
+    }
+    </script>
+    
+</body>
+</html>
