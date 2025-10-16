@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <input class="Input" type="search" placeholder="Search product name here ...">
+    <button class="Btn" onclick="search()">Search</button>
+    </div>
+    <div class="buttons">
+        <button class="BtnSelect" onclick="filtrerProduct('all')">All</button>
+        <button class="BtnSelect" onclick="filtrerProduct('Topwear')">Topwear</button>
+        <button class="BtnSelect" onclick="filtrerProduct('Bottomwear')">Bottomwear</button>
+        <button class="BtnSelect" onclick="filtrerProduct('Jacket')">Jacket</button>
+        <button class="BtnSelect" onclick="filtrerProduct('watch')">Watch</button>
+    </div>
+    <div id="products">
+
+    </div>
+    <script src="Script.js"></script>
+</body>
+</html>
