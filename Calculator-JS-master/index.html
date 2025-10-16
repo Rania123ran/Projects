@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator using JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+
+        <div id="Calculator">
+          <form action="">
+            <div class="output">
+                <input type="text" name="output" >
+            </div>
+            <div>
+                <input type="button" value="A C"  onclick="output.value = ''" class="oper">
+                <input type="button" value="D E" onclick="output.value = output.value.slice(0,-1)" class="oper">
+                <input type="button" value="."  onclick="output.value += '.'" class="oper">
+                <input type="button" value="/"  onclick="output.value += '/'" class="oper">
+            </div>
+            <div>
+                <input type="button" value="7" onclick="output.value += '7'">
+                <input type="button" value="8" onclick="output.value += '8'">
+                <input type="button" value="9" onclick="output.value += '9'">
+                <input type="button" value="*"  onclick="output.value += '*'" class="oper">                
+            </div>
+            <div>
+                <input type="button" value="4"  onclick="output.value += '4'">
+                <input type="button" value="5"  onclick="output.value += '5'">
+                <input type="button" value="6"  onclick="output.value += '6'">
+                <input type="button" value="-"  onclick="output.value += '-'" class="oper">           
+            </div>
+            <div>
+                <input type="button" value="1"  onclick="output.value += '1'">
+                <input type="button" value="2"  onclick="output.value += '2'">
+                <input type="button" value="3"  onclick="output.value += '4'">
+                <input type="button" value="+"  onclick="output.value += '+'" class="oper">
+            </div>
+            <div>
+                <input type="button" value="0 0"  onclick="output.value += '00'">
+                <input type="button" value="0"  onclick="output.value += '0'">
+                <input type="button" value="=" class="equals oper" onclick="output.value = eval(output.value)" >
+
+            </div>
+          </form>
+      </div>
+    </div>
+      
+    
+</body>
+</html>
