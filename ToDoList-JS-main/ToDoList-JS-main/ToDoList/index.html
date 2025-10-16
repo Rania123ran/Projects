@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="toDoList">
+    
+                 <h2>To-Do-List <img src="images/lister.png" alt="liste"></h2>
+        
+           <div class="inputs">
+                <input type="text" placeholder="Add your task" id="input-txt">
+                <button class="input-btn" onclick="MyFunction()">Add</button>
+           </div>
+           <ul id="MyList">
+                   
+           </ul>
+        </div>
+    </div>
+    <script>
+   
+        let ul = document.getElementById("MyList")
+        function MyFunction(){
+            let input = document.getElementById("input-txt")
+            let task = input.value.trim()
+            if(task === ""){
+                alert("You must write something !")
+            }
+            else{
+            let li = document.createElement("li")
+            li.textContent = task
+            ul.appendChild(li)
+            let imgs = document.createElement("img")
+            imgs.alt ="drop"
+            imgs.src="images/supprimer.png"
+            li.appendChild(imgs)
+            }
+            input.value = ""
+             
+        }
+        ul.addEventListener("click",function(e){
+            if(e.target.tagName === "LI"){
+                e.target.classList.toggle("checked")
+            }
+            else if (e.target.tagName ==="IMG"){
+                e.target.parentElement.remove()
+            }
+                })
+    
+        
+    </script>
+</body>
+</html>
