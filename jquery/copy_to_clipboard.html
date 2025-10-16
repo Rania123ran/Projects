@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy clipboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <style>
+        #copybtn:active{
+            transform: scale(0.98);
+        }
+        #coppied{
+            display: none;        }
+     #coppied.copy{
+         display: inline;  color: green;      }
+       
+    </style>
+</head>
+<body>
+    <div>
+        <h1 style="text-align: center;">COPY TO CLIPBOARD </h1>
+     
+        <textarea type="text" id="textarea" style="border: 1px solid;width: 400px;height: 200px; outline: none;resize:none">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit sequi, aliquid officia perspiciatis laborum eius ipsam vitae quisquam ullam hic aspernatur quo, consequatur id quibusdam reiciendis. Expedita dolore tenetur mollitia.</textarea><br><br>
+        <button id="copybtn" style="background-color: blue;width: 80px;height: 40px; color: white; border: none; border-radius: 5px;cursor: pointer;">Copy <i class="fas fa-copy" ></i></button>
+        <button id="copybtn" style="background-color: green;width: 80px;height: 40px; color: white; border: none; border-radius: 5px;cursor: pointer;">Past</button> 
+        <span id="coppied">Coppied !</span>
+         <span id="past"></span>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+
+      $(function(){
+        function addclass(){
+            $("#coppied").addClass("copy");
+        }
+        function removeclass(){
+            $("#coppied").removeClass("copy");
+        }
+
+        $("#copybtn").click(function(){
+            $("#textarea").select()
+            document.execCommand("copy")
+            addclass()
+            setTimeout(removeclass,2000)
+        
+        })
+       
+      })
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .btn {
+            position: fixed;
+            top: 20px;
+            padding: 10px;
+            border: 1px solid black;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #btn {
+            right: 20px;
+            background-color: black;
+            color: white;
+        }
+        #btn2 {
+            right: 20px; 
+            background-color: white;
+            color: black;
+            display:none;
+        }
+        .btn span {
+            display: flex;
+            align-items: center;
+        }
+        .btn i {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Dark / Light Mode</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius culpa saepe similique, vitae libero doloribus, enim officiis minima in dignissimos, 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita odit minima voluptates quos, illo, alias voluptas ex, nihil illum in harum sint eos laudantium totam quas suscipit fugiat velit inventore.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, provident. Dicta amet molestias modi, ducimus at veniam, molestiae consequatur, doloribus necessitatibus perferendis minima. Eos quibusdam impedit sunt, consequuntur nam placeat?aperiam facere hic non. Aliquid possimus nulla omnis quibusdam ex?</p>
+        <button id="btn" class="btn">
+            <span>Dark Mode <i class="fa fa-moon"></i></span>
+        </button>
+        <button id="btn2" class="btn">
+            <span>Light Mode <i class="fa-regular fa-lightbulb"></i></span>
+        </button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $("#btn").click(function(){
+                $("body").css("background-color","black")
+                $("p").css("color","white")
+                $("h2").css("color","white")
+                $("#btn").hide()
+                $("#btn2").show();
+            })
+            $("#btn2").click(function(){
+                $("body").css("background-color","white")
+                $("p").css("color","black")
+                $("h2").css("color","black")
+                $("#btn2").hide()
+                $("#btn").show();
+            })
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Size Changer</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background-color: aliceblue;
+        }
+        .container {
+            text-align: center; 
+        }
+        .value {
+            display: block; 
+            margin-bottom: 10px; 
+        }
+        input[type="range"] {
+            width: 100%; 
+            margin-bottom: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="value">50px</span>
+        <input type="range" name="" id="range" min="10" max="100" value="50">
+        <p id="para">Learn JQuery</p>
+    </div>   
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            function update(){
+                var value = $("#range").val();
+                $(".value").text(value+"px");
+                return value;
+            }
+            $("#range").on("input", function(){
+                var res = update();
+                $("#para").css("font-size", res + "px");
+            });
+           
+        });
+    </script>
+</body>
+</html>

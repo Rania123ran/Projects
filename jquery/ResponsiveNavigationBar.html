@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{
+            background-color:bisque;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        button{
+            border: none;
+            background-color: bisque;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            left: 50px;
+        }
+        #delete{
+            display: none;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        nav {
+            visibility: hidden;
+        }
+        nav.shownav {
+            display: grid;
+            gap: 10px;
+            background-color: azure;
+            padding: 10px;
+            position: absolute;
+            top: 40px;
+            left: 55px;
+            width: auto;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            visibility: visible;
+        }
+        a.active{
+            color: red;
+            border-left: 2px solid red;
+        }
+       
+    </style>
+</head>
+<body>
+    <button id="show" class="show"><i class="fa-solid fa-bars"></i></button>
+    <button id="delete" class="delete"><i class="fa-solid fa-x"></i></button>
+    <div class="container">
+            <nav>
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Works</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contact</a>
+            </nav>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+
+        $(function(){
+
+            $("#show").click(function(){
+                $("nav").addClass("shownav");
+                $("#show").hide();
+                $("#delete").show();
+            })
+
+            $("#delete").click(function(){
+                $("nav").removeClass("shownav");
+                $("#show").show();
+                $("#delete").hide();
+            })
+        })
+
+        $("a").click(function(){
+            $("a").removeClass("active");
+            $(this).addClass("active");
+           
+        })
+        
+
+
+    </script>
+</body>
+</html>
